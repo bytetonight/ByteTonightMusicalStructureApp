@@ -114,8 +114,11 @@ public class TitlesActivity extends BaseActivity
      */
     private void loadTitlesFromSdCard()
     {
-        sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://"
+        /*
+            Will fix this later
+            sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://"
                 + Environment.getExternalStorageDirectory())));
+                */
 
         //Manifest permissions alone will not do the trick on Android N
         //so we need to request user permissions like in LSL scripts
