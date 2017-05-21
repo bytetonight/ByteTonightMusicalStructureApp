@@ -38,7 +38,6 @@ public class TitlesActivity extends BaseActivity
         useMediaControls(true, mediaCtrlSize.SMALL);
         loadTitlesFromSdCard();
         initListView();
-
     }
 
     private void initListView()
@@ -78,11 +77,12 @@ public class TitlesActivity extends BaseActivity
 
     @Override
     public void onCreateContextMenu(ContextMenu menu, View v,
-                                    ContextMenu.ContextMenuInfo menuInfo) {
+                                    ContextMenu.ContextMenuInfo menuInfo)
+    {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.title_options_menu, menu);
-        ListView lv = (ListView)v;
+        ListView lv = (ListView) v;
         AdapterView.AdapterContextMenuInfo acmi = (AdapterView.AdapterContextMenuInfo) menuInfo;
         MediaFile obj = (MediaFile) lv.getItemAtPosition(acmi.position);
         //Toast.makeText(TitlesActivity.this,   obj.getName(),Toast.LENGTH_SHORT).show();
@@ -90,10 +90,12 @@ public class TitlesActivity extends BaseActivity
 
 
     @Override
-    public boolean onContextItemSelected(MenuItem item) {
+    public boolean onContextItemSelected(MenuItem item)
+    {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
         MediaFile obj = (MediaFile) mListView.getItemAtPosition(info.position);
-        switch (item.getItemId()) {
+        switch (item.getItemId())
+        {
             case R.id.play:
                 //editNote(info.id);
                 //Call play method
@@ -114,11 +116,18 @@ public class TitlesActivity extends BaseActivity
      */
     private void loadTitlesFromSdCard()
     {
-        /*
-            Will fix this later
-            sendBroadcast(new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://"
-                + Environment.getExternalStorageDirectory())));
-                */
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
+        {
+            final Intent scanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+            //final Uri contentUri = Uri.fromFile(outputFile);
+            //scanIntent.setData(contentUri);
+            sendBroadcast(scanIntent);
+        }
+        else
+        {
+            final Intent intent = new Intent(Intent.ACTION_MEDIA_MOUNTED, Uri.parse("file://" + Environment.getExternalStorageDirectory()));
+            sendBroadcast(intent);
+        }
 
         //Manifest permissions alone will not do the trick on Android N
         //so we need to request user permissions like in LSL scripts
@@ -179,7 +188,4 @@ public class TitlesActivity extends BaseActivity
 
         resultSet.close();
     }
-
-
-
 }
