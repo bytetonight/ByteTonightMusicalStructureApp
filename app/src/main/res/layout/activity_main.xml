@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    style="@style/root_view"
+    >
+
+    <ViewStub
+        android:id="@+id/top_menu_stub"
+        style="@style/top_menu_stub"
+        android:inflatedId="@+id/top_menu"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/mainContent"
+        style="@style/main_content_container"
+        >
+
+
+        <TextView
+            android:id="@+id/main_mnu_playing"
+            style="@style/main_menu_item_text"
+            android:drawableLeft="@drawable/ic_new_releases_white_48dp"
+            android:drawableStart="@drawable/ic_new_releases_white_48dp"
+            android:tag="@string/tag_playing"
+            android:text="@string/mnu_playing"
+            />
+
+
+        <TextView
+            android:id="@+id/main_mnu_play_list"
+            style="@style/main_menu_item_text"
+            android:drawableLeft="@drawable/ic_queue_music_white_48dp"
+            android:drawableStart="@drawable/ic_queue_music_white_48dp"
+            android:tag="@string/tag_playlist"
+            android:text="@string/mnu_playlist"
+            />
+
+
+        <TextView
+            android:id="@+id/main_mnu_albums"
+            style="@style/main_menu_item_text"
+            android:drawableLeft="@drawable/ic_album_white_48dp"
+            android:drawableStart="@drawable/ic_album_white_48dp"
+            android:tag="@string/tag_albums"
+            android:text="@string/mnu_albums"
+            />
+
+
+        <TextView
+            android:id="@+id/main_mnu_songs"
+            style="@style/main_menu_item_text"
+            android:drawableLeft="@drawable/ic_library_music_white_48dp"
+            android:drawableStart="@drawable/ic_library_music_white_48dp"
+            android:tag="@string/tag_titles"
+            android:text="@string/mnu_songs"
+            />
+
+
+        <TextView
+            android:id="@+id/main_mnu_artists"
+            style="@style/main_menu_item_text"
+            android:drawableLeft="@drawable/ic_people_white_48dp"
+            android:drawableStart="@drawable/ic_people_white_48dp"
+            android:tag="@string/tag_artists"
+            android:text="@string/mnu_artists"
+            />
+
+        <TextView
+            android:id="@+id/main_mnu_settings"
+            style="@style/main_menu_item_text"
+            android:drawableLeft="@drawable/ic_settings_white_48dp"
+            android:drawableStart="@drawable/ic_settings_white_48dp"
+            android:tag="@string/tag_settings"
+            android:text="@string/mnu_settings"
+            />
+
+
+        <ViewStub
+            android:id="@+id/media_control_stub"
+            style="@style/media_ctrl_stub"
+            android:inflatedId="@+id/media_controls_container"
+            android:layout="@layout/media_controls_small"
+            />
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:id="@+id/top_menu"
+                      style="@style/top_menu">
+
+    <LinearLayout
+        style="@style/top_menu_linear_container"
+        >
+
+        <TextView
+            android:id="@+id/mnu_home"
+            style="@style/top_menu_item"
+            android:tag="@string/tag_home"
+            android:text="@string/mnu_home"
+            />
+
+        <TextView
+            android:id="@+id/mnu_playing"
+            style="@style/top_menu_item"
+            android:tag="@string/tag_playing"
+            android:text="@string/mnu_playing"
+            />
+
+        <TextView
+            android:id="@+id/mnu_play_list"
+            style="@style/top_menu_item"
+            android:tag="@string/tag_playlist"
+            android:text="@string/mnu_playlist"
+            />
+
+        <TextView
+            android:id="@+id/mnu_albums"
+            style="@style/top_menu_item"
+            android:tag="@string/tag_albums"
+            android:text="@string/mnu_albums"
+            />
+
+        <TextView
+            android:id="@+id/mnu_songs"
+            style="@style/top_menu_item"
+            android:tag="@string/tag_titles"
+            android:text="@string/mnu_songs"
+            />
+
+        <TextView
+            android:id="@+id/mnu_artists"
+            style="@style/top_menu_item"
+            android:tag="@string/tag_artists"
+            android:text="@string/mnu_artists"
+            />
+
+        <TextView
+            android:id="@+id/mnu_settings"
+            style="@style/top_menu_item"
+            android:tag="@string/tag_settings"
+            android:text="@string/mnu_settings"
+            />
+    </LinearLayout>
+</HorizontalScrollView>

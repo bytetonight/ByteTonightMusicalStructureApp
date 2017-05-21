@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    style="@style/root_view"
+    >
+
+    <ViewStub
+        android:id="@+id/top_menu_stub"
+        style="@style/top_menu_stub"
+        android:inflatedId="@+id/top_menu"
+        android:layout="@layout/top_menu"
+        />
+
+    <LinearLayout
+        android:id="@+id/mainContent"
+        style="@style/main_content_container"
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            style="@style/mock_explanation_view"
+            android:text="@string/mnu_settings"
+            />
+
+    </LinearLayout>
+
+
+    <ViewStub
+        android:id="@+id/media_control_stub"
+        style="@style/media_ctrl_stub"
+        android:inflatedId="@+id/media_controls_container"
+        android:layout="@layout/media_controls_small"
+        />
+
+</RelativeLayout>
